@@ -36,9 +36,7 @@
     "grunt-mocha-test": "0.0.1"
   },
   "keywords": [
-    "tls",
-    "tunnel",
-    "reverse proxy",
-    "dynamic"
+    "synchronize",
+    "asynchronous"
   ]
 }
