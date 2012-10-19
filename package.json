@@ -22,9 +22,6 @@
     }
   ],
   "main": "src/Checklist.js",
-  "bin": {
-    "tls-tunnel": "bin/cli.js"
-  },
   "engines": {
     "node": ">= 0.8.12"
   },
