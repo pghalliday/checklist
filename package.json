@@ -1,7 +1,7 @@
 {
   "name": "checklist",
   "description": "A simple checklist for merging asynchronous activity",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/pghalliday/node-checklist",
   "author": {
     "name": "Peter Halliday",
