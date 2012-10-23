@@ -13,6 +13,7 @@ A simple Node.js checklist for synchronising asynchronous tasks by maintaining a
 - should not callback again after error
 - should throw an error if checked again after completion
 - should not alter the array passed in on construction
+- should callback with a list of errors for each item that was checked off with an error
 
 ## Installation
 
