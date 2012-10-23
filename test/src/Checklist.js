@@ -19,6 +19,18 @@ describe('Checklist', function() {
     checklist.check('test');
   });
 
+  it('should not alter the array passed in on construction', function(done) {
+    var list = ['test', 5, 'hello'];
+    var checklist = new Checklist(list, function(error) {
+      expect(error).to.be.an('undefined');
+      expect(list).to.deep.equal(['test', 5, 'hello']);
+      done();
+    });
+    checklist.check(5);
+    checklist.check('hello');
+    checklist.check('test');
+  });
+
   it('should callback with an error if an item is checked off that we are not waiting for', function(done) {
     var checklist = new Checklist(['test', 5, 'hello'], function(error) {
       expect(error.toString()).to.equal((new Error('Not waiting for item: goodbye')).toString());

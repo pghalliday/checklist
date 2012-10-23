@@ -12,6 +12,7 @@ A simple Node.js checklist for synchronising asynchronous tasks by maintaining a
 - should callback with an error if an item is checked off out of order and ordered has been set to true
 - should not callback again after error
 - should throw an error if checked again after completion
+- should not alter the array passed in on construction
 
 ## Installation
 
@@ -51,6 +52,7 @@ checklist.check('item 2');
 ## Roadmap
 
 - should allow more items to be added after construction
+  - This would only be useful if before checking off an existing item it is expanded into a new list which is then added - as such maybe it may make sense to just create a new checklist and chain them
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using ``./grunt.sh`` or ``.\grunt.bat``.

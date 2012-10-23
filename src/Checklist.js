@@ -1,7 +1,8 @@
 function Checklist(items, options, callback) {
-  var self = this;
-  var calledBack = false;
-  var complete = false;
+  var self = this,
+      calledBack = false,
+      complete = false,
+      list = items.slice(0);
   
   // deal with the optional options parameter
   if (typeof callback === 'undefined') {
@@ -9,7 +10,7 @@ function Checklist(items, options, callback) {
     options = {};
   }
 
-  if (items.length === 0) {
+  if (list.length === 0) {
     calledBack = true;
     complete = true;
     callback();
@@ -24,7 +25,7 @@ function Checklist(items, options, callback) {
         throw(new Error('Not waiting for item as already reported completion: ' + item));
       }
     } else {
-      var index = items.indexOf(item);
+      var index = list.indexOf(item);
       if (options.ordered && index !== 0) {
         index = -1;
       }
@@ -32,8 +33,8 @@ function Checklist(items, options, callback) {
         calledBack = true;
         callback(new Error('Not waiting for item: ' + item));
       } else {
-        items.splice(index, 1);
-        if (items.length === 0) {
+        list.splice(index, 1);
+        if (list.length === 0) {
           calledBack = true;
           complete = true;
           callback();
