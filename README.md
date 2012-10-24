@@ -1,5 +1,5 @@
-node-checklist
-===============
+checklist
+=========
 
 A simple Node.js checklist for synchronising asynchronous tasks by maintaining a list of items to check off before calling back.
 
